@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Color Ink Challenge</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="screen start-screen" id="start-screen" aria-labelledby="start-title">
+      <div class="start-copy">
+        <p class="eyebrow">A ten-round focus test</p>
+        <h1 id="start-title">Color <span>Ink</span><br>Challenge</h1>
+        <p class="subtitle">Can you identify the ink color without being distracted by the word?</p>
+      </div>
+      <div class="start-panel panel">
+        <div class="rules-grid">
+          <div><strong>10</strong><span>Levels</span></div>
+          <div><strong>10</strong><span>Points / hit</span></div>
+          <div><strong>1×</strong><span>Try per level</span></div>
+          <div><strong>10→1s</strong><span>Countdown</span></div>
+        </div>
+        <button class="primary-button" id="start-button" type="button">Start game <span aria-hidden="true">→</span></button>
+      </div>
+    </section>
+
+    <section class="screen game-screen hidden" id="game-screen" aria-labelledby="game-title">
+      <header class="game-header">
+        <div>
+          <p class="eyebrow">Color Ink Challenge</p>
+          <h2 id="game-title">Follow the ink, ignore the word.</h2>
+        </div>
+        <div class="score-block"><span>Score</span><strong id="score">00</strong></div>
+      </header>
+
+      <div class="game-meta">
+        <div class="level-label"><span>Level</span><strong id="level-number">1</strong><span class="muted">/ 10</span></div>
+        <div class="progress-track" aria-label="Level progress"><span id="progress-bar"></span></div>
+        <div class="timer-block" id="timer-block"><span>Time</span><strong id="timer">5.0</strong><span>s</span></div>
+      </div>
+
+      <div class="challenge-area">
+        <div class="instruction"><span class="target-dot"></span> <span id="target-instruction">Find the target tile.</span></div>
+        <div class="tile-grid" id="tile-grid" aria-label="Color word tiles"></div>
+        <div class="feedback" id="feedback" role="status" aria-live="polite"></div>
+      </div>
+
+      <div class="answers-wrap">
+        <p class="answer-label">Choose the ink color</p>
+        <div class="answer-grid" id="answer-grid"></div>
+      </div>
+    </section>
+
+    <section class="screen results-screen hidden" id="results-screen" aria-labelledby="results-title">
+      <p class="eyebrow">Challenge complete</p>
+      <h2 id="results-title">Game complete!</h2>
+      <p class="result-label">Total score</p>
+      <div class="result-score"><strong id="final-score">0</strong><span>/ 100</span></div>
+      <p class="result-message" id="result-message"></p>
+      <p class="levels-complete">Levels completed <strong>10 / 10</strong></p>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
